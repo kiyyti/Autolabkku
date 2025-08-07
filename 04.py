@@ -1,12 +1,10 @@
-id12digit = input("")
-if (len(id12digit) == 12 and id12digit.isdigit()):
-    t_sum = 0
+x = input("")
+if (len(x) == 12 and x.isdigit()):
+    n = 0
     for i in range(12):
-        digit = int(id12digit[i])
+        digit = int(x[i])
         weight = 13 - i
-        t_sum += digit * weight
+        n += digit * weight
 
-    mod11 = t_sum % 11
-    c_digit = (11 - mod11) % 10
-    f_id = id12digit + str(c_digit)
-    print(f"{f_id[0]} {f_id[1:5]} {f_id[5:10]} {f_id[10:12]} {f_id[12]}")
+    n12 = (11 - (n % 11)) % 10
+    print(f"{x[0]} {x[1:5]} {x[5:10]} {x[10:12]} {x[12]} {n12}")
